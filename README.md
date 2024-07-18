@@ -18,6 +18,7 @@ Task Manager API is a back-end application built with Spring Boot, MongoDB, and 
 ## Getting Started
 ### Install MongoDB via Docker 
 ```bash
+cd mongoDB
 docker-compose up -d
 ```
 ### Open, Install and Run Spring Boot Application
