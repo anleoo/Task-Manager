@@ -2,11 +2,12 @@
 // MongoDB Playground
 // Use Ctrl+Space inside a snippet or a string literal to trigger completions.
 
-const database = 'taskmanager';
-const collection = 'task';
+const database = "taskmanager";
+const collection = "task";
 
+use(database)
 // Connect to the "admin" database
-db = db.getSiblingDB('admin');
+//db = db.getSiblingDB('admin');
 
 // Create a new user for the "taskmanager" database with readWrite permissions
 db.createUser({
@@ -15,14 +16,16 @@ db.createUser({
   roles: [
     {
       role: "readWrite",
-      db: "taskmanager"
+      db: database
     }
   ]
 });
 
 
 // Create a new database.
-use(database);
+// Switch to the "taskmanager" database as the newly created user
+//db = db.getSiblingDB(database);
+db.auth("taskuser", "task");
 
 // Create a new collection.()
 db.createCollection(collection);
