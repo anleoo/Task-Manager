@@ -23,7 +23,7 @@ docker-compose up -d
 ```
 ### Open, Install and Run Spring Boot Application
 ```bash
-cd taskmanager-api
+cd taskmanagerAPI
 mvn clean install
 mvn spring-boot:run
 ```
